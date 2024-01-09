@@ -7,7 +7,7 @@
 
 import { argv } from 'node:process'; // import process argv
 import chalk from 'chalk'; // import chalk package to dye console messages
-import randomColor from 'randomcolor'; // import HEX randomizer package
+import randomColor from 'randomcolor'; // import random color package
 
 const hue = argv[2];
 const luminosity = argv[3];
@@ -15,15 +15,7 @@ const randomHex = randomColor({
   hue: `${hue}`,
   luminosity: `${luminosity}`,
 });
-// const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
-
-// const sideChar = chalk.hex(`${randomHex}`).visible('#####');
-// const topChar = chalk
-//   .hex(`${randomHex}`)
-//   .visible('###############################');
-
-const string = `
-###############################
+const string = `###############################
 ###############################
 ###############################
 #####                     #####
@@ -31,28 +23,7 @@ const string = `
 #####                     #####
 ###############################
 ###############################
-###############################
-`;
+###############################`;
+const coloredString = chalk.hex(`${randomHex}`).visible(`${string}`);
 
-const colString = chalk.hex(`${randomHex}`).visible(`${string}`);
-
-console.log(colString);
-
-// console.log(topChar);
-// console.log(topChar);
-// console.log(topChar);
-// console.log(`${sideChar}                     ${sideChar}`);
-// console.log(`${sideChar}       ${chalkRandomHex}       ${sideChar}`);
-// console.log(`${sideChar}                     ${sideChar}`);
-// console.log(topChar);
-// console.log(topChar);
-// console.log(topChar);
-
-// Below attempts of stretch goal to make the box dynamic
-
-// const char = '#';
-// const row = 14;
-// const col = 11;
-
-// const numRow = Math.ceil((row - 3) / 2) / 2;
-// const numCol = Math.ceil((col - 9) / 2) / 2;
+console.log(coloredString);

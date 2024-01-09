@@ -17,17 +17,20 @@ const randomHex = randomColor({
 });
 const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
 
-let sideChar = chalk.hex(`${randomHex}`).visible('####');
-let topChar = chalk
-  .hex(`${randomHex}`)
-  .visible('#############################');
+let sideChar = chalk.hex(`${randomHex}`).visible('#');
+let topChar = chalk.hex(`${randomHex}`).visible('###########');
 
 console.log(topChar);
+console.log(`${sideChar}         ${sideChar}`);
+console.log(`${sideChar} ${chalkRandomHex} ${sideChar}`);
+console.log(`${sideChar}         ${sideChar}`);
 console.log(topChar);
-console.log(topChar);
-console.log(`${sideChar}                     ${sideChar}`);
-console.log(`${sideChar}       ${chalkRandomHex}       ${sideChar}`);
-console.log(`${sideChar}                     ${sideChar}`);
-console.log(topChar);
-console.log(topChar);
-console.log(topChar);
+
+// Below attempts of stretch goal to make the box dynamic
+
+// const char = '#';
+// const row = 14;
+// const col = 11;
+
+// const numRow = Math.ceil((row - 3) / 2) / 2;
+// const numCol = Math.ceil((col - 9) / 2) / 2;

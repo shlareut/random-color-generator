@@ -24,6 +24,6 @@ const string = `###############################
 ###############################
 ###############################
 ###############################`;
-const coloredString = chalk.hex(`${randomHex}`).visible(`${string}`);
+const coloredString = chalk.hex(randomHex).visible(string);
 
 console.log(coloredString);

@@ -5,15 +5,7 @@
 // Step 5: Incorporate hue and luminosity in randomColor
 // Step 6: Generate boxes in console
 
-// Step 2: Allow user to input hue
-// Step 3: Allow user to input luminosity
-// Step 4: Incorporate user input in color generation
-// Step 5: Prompt user when user enters ask keyword
-// Step 6: Modify printed box based on user size input
-// Step 7: Console log result
-
 import { argv } from 'node:process'; // import process argv
-import boxen from 'boxen'; // import box generator library for console
 import chalk from 'chalk'; // import chalk package to dye console messages
 import randomColor from 'randomcolor'; // import HEX randomizer package
 
@@ -25,20 +17,17 @@ const randomHex = randomColor({
 });
 const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
 
-console.log(chalkRandomHex);
-console.log(hue);
-console.log(luminosity);
-console.log(
-  boxen('foo bar', {
-    borderStyle: {
-      topLeft: '#',
-      topRight: '#',
-      bottomLeft: '#',
-      bottomRight: '#',
-      top: '#',
-      bottom: '#',
-      left: '#',
-      right: '#',
-    },
-  }),
-);
+let sideChar = chalk.hex(`${randomHex}`).visible('####');
+let topChar = chalk
+  .hex(`${randomHex}`)
+  .visible('#############################');
+
+console.log(topChar);
+console.log(topChar);
+console.log(topChar);
+console.log(`${sideChar}                     ${sideChar}`);
+console.log(`${sideChar}       ${chalkRandomHex}       ${sideChar}`);
+console.log(`${sideChar}                     ${sideChar}`);
+console.log(topChar);
+console.log(topChar);
+console.log(topChar);

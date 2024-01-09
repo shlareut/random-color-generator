@@ -17,8 +17,8 @@ const randomHex = randomColor({
 });
 const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
 
-let sideChar = chalk.hex(`${randomHex}`).visible('#');
-let topChar = chalk.hex(`${randomHex}`).visible('###########');
+const sideChar = chalk.hex(`${randomHex}`).visible('#');
+const topChar = chalk.hex(`${randomHex}`).visible('###########');
 
 console.log(topChar);
 console.log(`${sideChar}         ${sideChar}`);

@@ -15,22 +15,38 @@ const randomHex = randomColor({
   hue: `${hue}`,
   luminosity: `${luminosity}`,
 });
-const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
+// const chalkRandomHex = chalk.hex(`${randomHex}`).visible(randomHex);
 
-const sideChar = chalk.hex(`${randomHex}`).visible('#####');
-const topChar = chalk
-  .hex(`${randomHex}`)
-  .visible('###############################');
+// const sideChar = chalk.hex(`${randomHex}`).visible('#####');
+// const topChar = chalk
+//   .hex(`${randomHex}`)
+//   .visible('###############################');
 
-console.log(topChar);
-console.log(topChar);
-console.log(topChar);
-console.log(`${sideChar}                     ${sideChar}`);
-console.log(`${sideChar}       ${chalkRandomHex}       ${sideChar}`);
-console.log(`${sideChar}                     ${sideChar}`);
-console.log(topChar);
-console.log(topChar);
-console.log(topChar);
+const string = `
+###############################
+###############################
+###############################
+#####                     #####
+#####      ${randomHex}        #####
+#####                     #####
+###############################
+###############################
+###############################
+`;
+
+const colString = chalk.hex(`${randomHex}`).visible(`${string}`);
+
+console.log(colString);
+
+// console.log(topChar);
+// console.log(topChar);
+// console.log(topChar);
+// console.log(`${sideChar}                     ${sideChar}`);
+// console.log(`${sideChar}       ${chalkRandomHex}       ${sideChar}`);
+// console.log(`${sideChar}                     ${sideChar}`);
+// console.log(topChar);
+// console.log(topChar);
+// console.log(topChar);
 
 // Below attempts of stretch goal to make the box dynamic
 
